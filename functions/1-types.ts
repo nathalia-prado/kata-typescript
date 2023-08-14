@@ -47,7 +47,13 @@ export function sumFrame(a: number, b: number, c?: number): number {
 
 // greetFullName should return a string containing the full name
 // including middle name if it exists
-export function greetFullName(): void {}
+export function greetFullName(first: string, last: string, middle?: string) : string {
+    if(middle) {
+        return 'Hello ' + first + ' ' + middle + ' ' + last
+    } else {
+        return 'Hello ' + first + ' ' + last
+    }
+}
 
 // ----------- UNIONS -----------
 
