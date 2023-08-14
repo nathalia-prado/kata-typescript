@@ -11,12 +11,20 @@ export function getFullName(firstName: string, lastName: string): string {
 }
 
 // addNumbers should return the sum of the two parameters
-export function addNumbers(): void {}
+export function addNumbers(a: number, b: number): number {
+    return a + b
+}
 
 // bottlesOfBeerOnTheWall should return a string containing
 // the number of bottles of beer on the wall, but!
 // if the number of bottles is 0, it should return 'No more bottles of beer on the wall'
-export function bottlesOfBeerOnTheWall(): void {}
+export function bottlesOfBeerOnTheWall(bottles: number): string {
+    if(bottles === 0) {
+        return 'No more bottles of beer on the wall'
+    } else {
+        return bottles + ' bottles of beer on the wall'
+    }
+}
 
 // printGreeting should not return a value,
 // instead it should console.log a string containing
@@ -37,7 +45,9 @@ export function greetFullName(): void {}
 
 // addNumbersAndStrings accepts two arguments that can be either a number or a number inside a string
 // the sum of the two arguments should be returned as a number regardless of their original type
-export function addNumbersAndStrings(): void {}
+export function addNumbersAndStrings(a: string | number, b: string | number): number {
+    return Number(a) + Number(b)
+}
 
 // fizzbuzz accepts a number and returns a string or number
 // if the number is divisible by 3, return 'fizz'
