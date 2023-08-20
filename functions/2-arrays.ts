@@ -9,7 +9,15 @@ export function getLastSongPlayed(arr: Array<string>): string {
 }
 
 // findLongestWord should return the longest word in the array
-export function findLongestWord(): void {}
+export function findLongestWord(arr: Array<string>): string {
+    let longestWord = ''
+    for(const word of arr) {
+        if(word.length > longestWord.length) {
+            longestWord = word
+        }
+    }
+    return longestWord
+}
 
 // fillArrayWithBees should return an array of the correct length, filled with the string 'buzz'
 export function fillArrayWithBees(): void {}
