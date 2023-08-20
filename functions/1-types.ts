@@ -82,12 +82,12 @@ export function fizzbuzz(number: number): string | number {
 
 // ----------- TYPE ALIASES -----------
 
-type StringOrNumber = void
+type StringOrNumber = number | string
 
 // sumMatchingType accepts two arguments that can be either a number or a string
 // if both arguments are numbers, the sum of the two arguments should be returned as a number
 // if either argument is a string, the two arguments should be summed together and returned as a string
-export function sumMatchingType(number: number | string, number2: number | string): string | number {
+export function sumMatchingType(number: StringOrNumber, number2: StringOrNumber): StringOrNumber {
     if(typeof number === 'number' && typeof number2 === 'number') {
         return number + number2
     } else {
@@ -96,7 +96,17 @@ export function sumMatchingType(number: number | string, number2: number | strin
     }
 }
 
+type LightColor = string
+
 // getNextTrafficLightColour accepts the current colour of a traffic light colour and returns the next colour
 // the light sequence is green -> yellow -> red -> green -> yellow -> (etc)
 // Remember to use a type alias!
-export function getNextTrafficLightColour(): void {}
+export function getNextTrafficLightColour(lightColor: LightColor): LightColor {
+    if(lightColor === 'green') {
+        return 'yellow'
+    } else if( lightColor === 'yellow') {
+        return 'red'
+    } else {
+        return 'green'
+    }
+}
