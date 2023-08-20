@@ -54,7 +54,10 @@ export function stringsOnly(arr: Array<string | null>): Array<string> {
 // based on a tuple containing the first name, last name and year born
 // e.g. generateUsername(['John', 'Smith', 1980]) should return 'smithjo_1980'
 // e.g. generateUsername(['Jane', 'Doe', 1965]) should return 'doeja_1965'
-export function generateUsername(): void {}
+export function generateUsername(arr: [string, string, number]): string {
+    const userName = arr[1] + arr[0].substring(0, 2) + '_' + arr[2]
+    return userName.toLowerCase()
+}
 
 // getNextMapCoord should return the next coordinate in the direction specified
 // e.g. getNextMapCoord([0, 0], 'N') should return [0, 1]
