@@ -1,17 +1,33 @@
 // getNextNum should return the first number in the array
-export function getNextNum(): void {}
+export function getNextNum(arr: Array<number>): number {
+    return arr[0]
+}
 
 // getLastSongPlayed should return the last song in the array
-export function getLastSongPlayed(): void {}
+export function getLastSongPlayed(arr: Array<string>): string {
+    return arr[arr.length - 1]
+}
 
 // findLongestWord should return the longest word in the array
-export function findLongestWord(): void {}
+export function findLongestWord(arr: Array<string>): string {
+    let longestWord = ''
+    for(const word of arr) {
+        if(word.length > longestWord.length) {
+            longestWord = word
+        }
+    }
+    return longestWord
+}
 
 // fillArrayWithBees should return an array of the correct length, filled with the string 'buzz'
-export function fillArrayWithBees(): void {}
+export function fillArrayWithBees(number: number): Array<string> {
+    return Array(number).fill('buzz')
+}
 
 // sortBySize should return an array of strings sorted by length
-export function sortBySize(): void {}
+export function sortBySize(arr: Array<string>): Array<string> {
+    return [...arr.sort((a, b) => a.length - b.length)]
+}
 
 // ----------- ARRAYS WITH UNIONS -----------
 // Note: as we are dealing with multiple types in these arrays, TS may have a harder time inferring
@@ -21,11 +37,16 @@ export function sortBySize(): void {}
 
 // sumStringsAndNumbers should return the sum of all the items in the array
 // regardless of whether they are strings or numbers
-export function sumStringsAndNumbers(): void {}
+export function sumStringsAndNumbers(arr: Array<number | string> ): number {
+    const sum = arr.reduce((accumulator, currentValue) => Number(accumulator) + Number(currentValue))
+    return Number(sum)
+}
 
 // stringsOnly will be passed an array of strings and some null values
 // it should return a new array with all the null values removed - strings only!
-export function stringsOnly(): void {}
+export function stringsOnly(arr: Array<string | null>): Array<string> {
+    return arr.filter(word => word !== null) as Array<string>
+}
 
 // ----------- TUPLES -----------
 
@@ -33,7 +54,10 @@ export function stringsOnly(): void {}
 // based on a tuple containing the first name, last name and year born
 // e.g. generateUsername(['John', 'Smith', 1980]) should return 'smithjo_1980'
 // e.g. generateUsername(['Jane', 'Doe', 1965]) should return 'doeja_1965'
-export function generateUsername(): void {}
+export function generateUsername(arr: [string, string, number]): string {
+    const userName = arr[1] + arr[0].substring(0, 2) + '_' + arr[2]
+    return userName.toLowerCase()
+}
 
 // getNextMapCoord should return the next coordinate in the direction specified
 // e.g. getNextMapCoord([0, 0], 'N') should return [0, 1]
